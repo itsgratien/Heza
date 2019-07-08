@@ -24,6 +24,9 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "cloudinary-jquery-file-upload": "^2.6.3"
+        "blueimp-file-upload": "^9.32.0",
+        "cloudinary-core": "^2.6.3",
+        "cloudinary-jquery-file-upload": "^2.6.3",
+        "dotenv": "^8.0.0"
     }
 }

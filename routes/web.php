@@ -14,12 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/show',function(){
-    return view('story.show');
-});
-Route::get('/create',function(){
-    return view('story.create');
-});
+Route::resource('story', 'StoryController');
+Route::post('/story/upload-image','StoryController@uploadImage')->middleware('auth');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
