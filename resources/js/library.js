@@ -1,2 +1,2 @@
 window.Jquery= require('jquery');
-window.cloudinary=require('cloudinary-jquery-file-upload');
+window.cloudinary=require('cloudinary-core');

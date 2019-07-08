@@ -11,6 +11,7 @@
 </head>
 <body>
 <header>
+    <div class="loading-bar"></div>
     <nav>
     <ul class="nav justify-content-justify">
     <li class="nav-item">
@@ -58,7 +59,7 @@
               </div>
             </div>
             <li>
-                <a class="nav-link" href="#"><i class="icofont-brand-appstore"></i> New Story</a>
+            <a class="nav-link" href="/story/create"><i class="icofont-brand-appstore"></i> New Story</a>
             </li>
             <li>
                 <a class="nav-link" href="#"><i class="icofont-read-book"></i> Stories</a>
@@ -85,13 +86,13 @@
 </header>
 <section class="showcase">
     @yield('content')
+    <div class="success-message"></div>
 </section>
-
 <footer>
 
 </footer>
+@yield('scripts')
 <script src="/js/library.js" type="text/javascript"></script>
-<script src="/js/upload.js" type="text/javascript"></script>
 <script src="/js/auth.js" type="text/javascript"></script>
 </body>
 </html>
