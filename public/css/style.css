@@ -143,10 +143,24 @@ body header .header-infos .header-user-profile .header-user-auth-links li {
   padding-top: 10px;
 }
 
+body .app-title {
+  font-family: "Lobster", cursive;
+}
+
+body .app-title div {
+  font-size: 2rem;
+  width: 30%;
+  margin: auto;
+}
+
 body .showcase {
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 100px;
+}
+
+body .showcase .top-category-story {
+  display: none;
 }
 
 body .showcase .top-category-story .rows-top {
@@ -393,7 +407,8 @@ body .showcase .story-single-story .publish-tags input {
   padding-left: 10px;
 }
 
-body .showcase .story-single-story .publish-tags .publish-btn {
+body .showcase .story-single-story .publish-tags .publish-btn,
+body .showcase .story-single-story .publish-tags .update-btns {
   margin-top: 20px;
   border: 1px solid #29d2ca;
   padding: 10px;
@@ -516,7 +531,8 @@ body .loading-bar {
   }
 }
 
-body .success-message {
+body .success-message,
+body .error-message {
   position: absolute;
   right: 0;
   top: 0;
@@ -528,5 +544,85 @@ body .success-message {
   border-radius: 2px;
   padding-right: 40px;
   display: none;
+}
+
+body .error-message {
+  background: red;
+}
+
+body .profile-section {
+  width: 55%;
+}
+
+body .profile-section .avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+}
+
+body .profile-section .user-articles {
+  box-shadow: 0px 0px 2px 0px #ddd;
+  padding: 10px;
+  border-radius: 3px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+body .profile-section .user-articles .user-articles-top-section .articles-avatar {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+}
+
+body .profile-section .user-articles .user-articles-top-section .articles-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+
+body .profile-section .user-articles .user-articles-top-section .articles-infos {
+  display: inline-block;
+}
+
+body .profile-section .user-articles .user-articles-image {
+  width: 100%;
+  height: 300px;
+}
+
+body .profile-section .user-articles .user-articles-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+body .profile-section .user-articles .user-articles-container a {
+  color: #000;
+}
+
+body .profile-section .user-articles .user-articles-container h1 {
+  font-weight: bold;
+  line-height: 40px;
+}
+
+body .profile-section .user-articles .user-articles-actions {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+body .profile-section .user-articles .user-articles-actions .btn-action {
+  border: none;
+  background: #fff;
+  outline: none;
+  box-shadow: none;
+}
+
+body .profile-section .user-articles .user-articles-actions .deleteBtn {
+  color: red;
+}
+
+body .profile-section .user-articles .user-articles-actions .EditBtn {
+  color: #29d2ca;
 }
 

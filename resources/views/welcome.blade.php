@@ -1,6 +1,11 @@
 @extends('layouts.index')
 @section('title', 'welcome')
 @section('content')
+<div class="text-center app-title">
+ <div>
+     Open Source Blogging Application
+ </div>
+</div>
 <div class="top-category-story">
     <div class="container">
     <div class="row rows-top">
@@ -64,136 +69,38 @@
     </div>
     </div>
 </div>
-<div class="bodys mt-5">
+<div class="bodys">
         <div class="container">
-                <div class="row">
-                      <div class="col-md-4">
-                        <div class="story-image">
-                          <img src="https://cdn.pixabay.com/photo/2015/06/22/08/37/children-817365_1280.jpg" alt="">
-                        </div>
-                         <div class="story-begin">
-                                <div class="story-title">
-                                        How i learned to code without a computer
-                                    </div>
-                                      <div class="story-footers mt-2">
-                                          <div class="story-created-by">
-                                              <div class="story-avatar">
-                                                <img src="https://cdn.pixabay.com/photo/2015/06/22/08/37/children-817365_1280.jpg" alt="">
-                                              </div>
-                                              <div class="story-date-username">
-                                                  <p>gratien</p>
-                                                 <p> <strong>Created on</strong> Jun 15 2019</p>
-                                              </div>
-                                          </div>
-                                      </div>
-                         </div>
-                      </div>
-                      <div class="col-md-4">
+                <div class="row justify-content-center">
+                    @if($data->isEmpty())
+                    <div class="text-center p-5">
+                        Sorry the requested result could not be found.
+                    </div>
+                    @else
+                    @foreach ($data as $item)
+                    <div class="col-md-4">
                             <div class="story-image">
-                              <img src="https://cdn.pixabay.com/photo/2015/06/22/08/37/children-817365_1280.jpg" alt="">
+                              <img src="{!! $item->image ? $item->image: 'https://res.cloudinary.com/heza/image/upload/v1562669012/whatisblog_vtnaim.png'!!}" alt="">
                             </div>
                              <div class="story-begin">
-                                    <div class="story-title">
-                                            How i learned to code without a computer
+                            <div class="story-title">
+                                    {!! strip_tags(substr($item->title, 0,40))!!}
+                                </div>
+                                    <div class="story-footers mt-2">
+                                        <div class="story-created-by">
+                                            <div class="story-avatar">
+                                            <img src="https://cdn.pixabay.com/photo/2015/06/22/08/37/children-817365_1280.jpg" alt="">
+                                            </div>
+                                            <div class="story-date-username">
+                                                <p>gratien</p>
+                                                <p> <strong>Created on</strong> Jun 15 2019</p>
+                                            </div>
                                         </div>
-                                          <div class="story-footers mt-2">
-                                              <div class="story-created-by">
-                                                  <div class="story-avatar">
-                                                    <img src="https://cdn.pixabay.com/photo/2015/06/22/08/37/children-817365_1280.jpg" alt="">
-                                                  </div>
-                                                  <div class="story-date-username">
-                                                      <p>gratien</p>
-                                                     <p> <strong>Created on</strong> Jun 15 2019</p>
-                                                  </div>
-                                              </div>
-                                          </div>
+                                    </div>
                              </div>
                           </div>
-                          <div class="col-md-4">
-                                <div class="story-image">
-                                  <img src="https://cdn.pixabay.com/photo/2015/01/15/16/17/hands-600497_1280.jpg" alt="">
-                                </div>
-                                 <div class="story-begin">
-                                        <div class="story-title">
-                                                How i learned to code without a computer
-                                            </div>
-                                              <div class="story-footers mt-2">
-                                                  <div class="story-created-by">
-                                                      <div class="story-avatar">
-                                                        <img src="https://cdn.pixabay.com/photo/2015/06/22/08/37/children-817365_1280.jpg" alt="">
-                                                      </div>
-                                                      <div class="story-date-username">
-                                                          <p>gratien</p>
-                                                         <p> <strong>Created on</strong> Jun 15 2019</p>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                 </div>
-                              </div>
-                              <div class="col-md-4">
-                                    <div class="story-image">
-                                      <img src="https://cdn.pixabay.com/photo/2015/06/22/08/37/children-817365_1280.jpg" alt="">
-                                    </div>
-                                     <div class="story-begin">
-                                            <div class="story-title">
-                                                    How i learned to code without a computer
-                                                </div>
-                                                  <div class="story-footers mt-2">
-                                                      <div class="story-created-by">
-                                                          <div class="story-avatar">
-                                                            <img src="https://cdn.pixabay.com/photo/2015/06/22/08/37/children-817365_1280.jpg" alt="">
-                                                          </div>
-                                                          <div class="story-date-username">
-                                                              <p>gratien</p>
-                                                             <p> <strong>Created on</strong> Jun 15 2019</p>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                     </div>
-                                  </div>
-                                  <div class="col-md-4">
-                                        <div class="story-image">
-                                          <img src="https://cdn.pixabay.com/photo/2015/06/22/08/37/children-817365_1280.jpg" alt="">
-                                        </div>
-                                         <div class="story-begin">
-                                                <div class="story-title">
-                                                        How i learned to code without a computer
-                                                    </div>
-                                                      <div class="story-footers mt-2">
-                                                          <div class="story-created-by">
-                                                              <div class="story-avatar">
-                                                                <img src="https://cdn.pixabay.com/photo/2015/06/22/08/37/children-817365_1280.jpg" alt="">
-                                                              </div>
-                                                              <div class="story-date-username">
-                                                                  <p>gratien</p>
-                                                                 <p> <strong>Created on</strong> Jun 15 2019</p>
-                                                              </div>
-                                                          </div>
-                                                      </div>
-                                         </div>
-                                      </div>
-                                      <div class="col-md-4">
-                                            <div class="story-image">
-                                              <img src="https://cdn.pixabay.com/photo/2015/01/15/16/17/hands-600497_1280.jpg" alt="">
-                                            </div>
-                                             <div class="story-begin">
-                                                    <div class="story-title">
-                                                            How i learned to code without a computer
-                                                        </div>
-                                                          <div class="story-footers mt-2">
-                                                              <div class="story-created-by">
-                                                                  <div class="story-avatar">
-                                                                    <img src="https://cdn.pixabay.com/photo/2015/06/22/08/37/children-817365_1280.jpg" alt="">
-                                                                  </div>
-                                                                  <div class="story-date-username">
-                                                                      <p>gratien</p>
-                                                                     <p> <strong>Created on</strong> Jun 15 2019</p>
-                                                                  </div>
-                                                              </div>
-                                                          </div>
-                                             </div>
-                                          </div>
-
+                    @endforeach
+                    @endif
                 </div>
               </div>
 </div>

@@ -2,6 +2,7 @@ const token = Jquery("input[name='_token']").val();
 let loading =Jquery(".loading-bar");
 let imageTag=Jquery(".imageURL");
 let successMsg=Jquery(".success-message");
+let errorMsg=Jquery(".error-message");
     Jquery(".upload-image").on("click",function(){
         Jquery(".input-upload-file").trigger("click");
     });
@@ -43,10 +44,10 @@ const uploadImage=(file)=>{
 //submit
 Jquery(".publish-btn").on("click",function(e){
   e.preventDefault();
-  let imgData= imageTag.attr("src") !=="" ? imageTag.attr("src") : null;
-  let title = Jquery(".create-story-title")[0].innerHTML;
-  let slug = Jquery(".create-story-title")[0].innerText;
-  let body = Jquery(".create-body")[0].innerHTML;
+    let imgData= imageTag.attr("src") !=="" ? imageTag.attr("src") : null;
+    let title = Jquery(".create-story-title")[0].innerHTML;
+    let slug = Jquery(".create-story-title")[0].innerText;
+    let body = Jquery(".create-body")[0].innerHTML;
   loading.css('display','block');
   Jquery.ajax({
       method: 'POST',
@@ -69,7 +70,46 @@ Jquery(".publish-btn").on("click",function(e){
   })
   .fail(function(error){
     loading.css('display','none');
-    console.log(error.responseJSON.errors);
+  })
+});
+
+Jquery(".update-btns").on("click",function(e){
+  e.preventDefault();
+  let imgData= imageTag.attr("src") !=="" ? imageTag.attr("src") : null;
+  let title = Jquery(".create-story-title")[0].innerHTML;
+  let slug = Jquery(".create-story-title")[0].innerText;
+  let body = Jquery(".create-body")[0].innerHTML;
+  let storyID= Jquery("#storyID").val();
+  loading.css('display','block');
+  Jquery.ajax({
+      method: 'PATCH',
+      url: `/story/${storyID}`,
+      data:{
+          _token:token,
+          title,
+          story:body,
+          slug,
+          image:imgData
+      }
+  })
+  .done(function(data){
+      successMsg.css("display","block");
+      successMsg.append(data.message);
+      setTimeout(function(){window.location.reload(true)},1000);
+  })
+  .fail(function(errorD){
+    loading.css('display','none');
+    const manageError=errorD.responseJSON;
+    const {error, errors} = manageError;
+    errorMsg.css('display','block');
+    if(error) errorMsg.append(error);
+    if(errors){
+    errorMsg.append(`<ul>
+    <li>${errors.title ? errors.title : ''}</li>
+    <li>${errors.story ? errors.story : ''}</li>
+    </ul>`);
+    }
+
   })
 })
 

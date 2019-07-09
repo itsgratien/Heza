@@ -40,4 +40,5 @@ class User extends Authenticatable
    public function story(){
        return $this->hasMany(Story::class,'owner_id');
    }
+
 }

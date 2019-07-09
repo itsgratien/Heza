@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="/css/app.css" type="text/css">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/icofont/icofont.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
     <div class="loading-bar"></div>
-    <nav>
+    {{-- <nav>
     <ul class="nav justify-content-justify">
     <li class="nav-item">
         <a class="nav-link active" href="#">Technology</a>
@@ -27,18 +28,20 @@
             <a class="nav-link" href="#">Design</a>
         </li>
     </ul>
-    </nav>
+    </nav> --}}
     <div class="logo">
-    <img src="https://i.ibb.co/1MfL4sC/android-character-symbol.png" alt="logo">
-    <h5>Heza</h5>
+     <a href="/">
+        <img src="https://i.ibb.co/1MfL4sC/android-character-symbol.png" alt="logo">
+        <h5>Heza</h5>
+     </a>
     </div>
     <div class="header-infos">
-      <div class="header-search">
+      {{-- <div class="header-search">
         <label for="">
             <i class="icofont-search"></i>
             <input type="text" placeholder="search" class="form-control">
         </label>
-      </div>
+      </div> --}}
      @guest
      <div class="header-user-profile">
         <div class="header-user-auth">
@@ -65,7 +68,7 @@
                 <a class="nav-link" href="#"><i class="icofont-read-book"></i> Stories</a>
             </li>
             <li>
-                <a class="nav-link" href="#"><i class="icofont-user-suited"></i> Profile</a>
+                <a class="nav-link" href="/{!! Auth()->user()->handle !!}"><i class="icofont-user-suited"></i> Profile</a>
             </li>
             <li>
                 <a class="nav-link" href="#"><i class="icofont-ui-settings"></i> Setting</a>
@@ -87,6 +90,7 @@
 <section class="showcase">
     @yield('content')
     <div class="success-message"></div>
+    <div class="error-message"></div>
 </section>
 <footer>
 
