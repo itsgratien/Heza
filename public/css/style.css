@@ -263,6 +263,10 @@ body .showcase .bodys .story-begin .story-title {
   width: 90%;
 }
 
+body .showcase .bodys .story-begin .story-title a {
+  color: #000;
+}
+
 body .showcase .bodys .story-begin .story-footers {
   position: relative;
 }

@@ -86,7 +86,9 @@
                                 </div>
                                  <div class="story-begin">
                                 <div class="story-title">
+                                    <a href="/story/{!! $item->slug!!}">
                                         {!! strip_tags(substr($item->title, 0,40))!!}
+                                    </a>
                                     </div>
                                         <div class="story-footers mt-2">
                                             <div class="story-created-by">
