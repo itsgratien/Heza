@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use JD\Cloudder\Facades\Cloudder;
 use Illuminate\Support\Str;
 use App\Story as Story;
+use App\User;
+
 class StoryController extends Controller
 {
     /**
@@ -83,9 +85,12 @@ class StoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
         //
+        $story = Story::where('slug','=',$slug)->first();
+        abort_if(!$story || $story->owner_id!==auth()->id(), 404);
+        return view('story.edit',['story'=>$story]);
     }
 
     /**
@@ -98,6 +103,16 @@ class StoryController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $attributes = $request->validate([
+            'title'=>'required|min:3',
+            'story'=>'required|min:4'
+        ]);
+        $attributes['image']=$request->image;
+        $story = Story::where('story_id','=',$id)->first();
+        abort_if(!$story || $story->owner_id != auth()->id(),
+        response()->JSON(['error'=>'the requested resource could not be found'],404));
+        Story::where('story_id','=',$id)->update($attributes);
+        return response()->JSON(['message'=>'your story has been updated successfully.']);
     }
 
     /**
@@ -108,6 +123,7 @@ class StoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Story::where('story_id','=',$id)->delete();
+        return back();
     }
 }

@@ -10,14 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes();
+Route::get('/', 'IndexController@index');
 Route::resource('story', 'StoryController');
 Route::post('/story/upload-image','StoryController@uploadImage')->middleware('auth');
-
 Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
+Route::get('/{handle}','UserController@index');
 
