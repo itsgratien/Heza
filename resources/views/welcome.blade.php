@@ -2,7 +2,7 @@
 @section('title', 'welcome')
 @section('content')
 <div class="text-center app-title">
- <div>
+ <div class="mb-5">
      Open Source Blogging Application
  </div>
 </div>

@@ -163,10 +163,6 @@ body .showcase {
   padding-top: 100px;
 }
 
-body .showcase .top-category-story {
-  display: none;
-}
-
 body .showcase .top-category-story .rows-top {
   margin-right: -50px !important;
   margin-left: -50px !important;
