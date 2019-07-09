@@ -16,8 +16,8 @@ composer install
 npm install
 ```
 ### Change Environment Variable
- - APP is using cloudder package for uploading image make sure that you have cloudinary account
- - cloudinary Link [cloudinary](https://cloudinary.com/)
+ - APP is using cloudder package for uploading image. 
+ - cloudinary Link [cloudinary](https://cloudinary.com/) 
 #### Change Cloudinary Setup  in .env file
 - CLOUDINARY_CLOUD_NAME=CLOUD_NAME
 - CLOUDINARY_API_KEY=CLOUD_API_KEY
