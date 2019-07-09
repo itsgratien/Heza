@@ -32,6 +32,10 @@ body header .logo {
   margin-top: 5px;
 }
 
+body header .logo a {
+  color: #29d2ca;
+}
+
 body header .logo img {
   width: 30px;
   display: inline-block;
@@ -281,6 +285,10 @@ body .showcase .bodys .story-begin .story-footers .story-created-by .story-date-
   display: inline-block;
   position: absolute;
   margin-left: 10px;
+}
+
+body .showcase .bodys .story-begin .story-footers .story-created-by .story-date-username a {
+  color: #000;
 }
 
 body .showcase .bodys .story-begin .story-footers .story-created-by .story-date-username p {
@@ -623,6 +631,40 @@ body .profile-section .user-articles .user-articles-actions .deleteBtn {
 }
 
 body .profile-section .user-articles .user-articles-actions .EditBtn {
+  color: #29d2ca;
+}
+
+body footer {
+  border-top: 1px solid #dddddd1a;
+  margin-top: 50px;
+}
+
+body footer .logo a {
+  color: #29d2ca;
+}
+
+body footer .logo img {
+  width: 50px;
+  display: inline-block;
+}
+
+body footer .logo h5 {
+  display: inline-block;
+}
+
+body footer .followMe {
+  display: grid;
+  grid-template-columns: 30px 30px 30px 30px;
+  grid-gap: 20px;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+body footer .followMe div {
+  font-size: 20px;
+}
+
+body footer .followMe div a {
   color: #29d2ca;
 }
 

@@ -72,33 +72,39 @@
 <div class="bodys">
         <div class="container">
                 <div class="row justify-content-center">
-                    @if($data->isEmpty())
+                    @if($data->isEmpty() && $users->isEmpty())
                     <div class="text-center p-5">
                         Sorry the requested result could not be found.
                     </div>
                     @else
                     @foreach ($data as $item)
-                    <div class="col-md-4">
-                            <div class="story-image">
-                              <img src="{!! $item->image ? $item->image: 'https://res.cloudinary.com/heza/image/upload/v1562669012/whatisblog_vtnaim.png'!!}" alt="">
-                            </div>
-                             <div class="story-begin">
-                            <div class="story-title">
-                                    {!! strip_tags(substr($item->title, 0,40))!!}
+                     @foreach ($users as $owners)
+                        @if ($owners->id == $item->owner_id)
+                        <div class="col-md-4">
+                                <div class="story-image">
+                                  <img src="{!! $item->image ? $item->image: 'https://res.cloudinary.com/heza/image/upload/v1562669012/whatisblog_vtnaim.png'!!}" alt="">
                                 </div>
-                                    <div class="story-footers mt-2">
-                                        <div class="story-created-by">
-                                            <div class="story-avatar">
-                                            <img src="https://cdn.pixabay.com/photo/2015/06/22/08/37/children-817365_1280.jpg" alt="">
-                                            </div>
-                                            <div class="story-date-username">
-                                                <p>gratien</p>
-                                                <p> <strong>Created on</strong> Jun 15 2019</p>
+                                 <div class="story-begin">
+                                <div class="story-title">
+                                        {!! strip_tags(substr($item->title, 0,40))!!}
+                                    </div>
+                                        <div class="story-footers mt-2">
+                                            <div class="story-created-by">
+                                                <div class="story-avatar">
+                                                <img src="{!! $owners->avatar ? $owners->avatar : 'https://i.ibb.co/c8ZKWhx/ninja-1.png'!!}" alt="">
+                                                </div>
+                                                <div class="story-date-username">
+                                                    <a href="/{!! $owners->handle!!}">
+                                                       <p>{!! $owners->name !!}</p>
+                                                    </a>
+                                                    <p> <strong>Created on</strong> {!! $item->created_at !!}</p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                             </div>
-                          </div>
+                                 </div>
+                              </div>
+                        @endif
+                     @endforeach
                     @endforeach
                     @endif
                 </div>
