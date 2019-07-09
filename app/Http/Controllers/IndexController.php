@@ -11,6 +11,7 @@ class IndexController extends Controller
     //
     public function index(){
         $data= Story::all();
-        return view('welcome',['data'=>$data]);
+        $users = User::all();
+        return view('welcome',['data'=>$data, 'users'=>$users]);
     }
 }

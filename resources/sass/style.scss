@@ -30,6 +30,9 @@ body{
             top: 0;
             text-align: center;
             margin-top: 5px;
+            a{
+                color: $choosenColor;
+            }
             img{
                 width: 30px;
                 display: inline-block;
@@ -248,6 +251,9 @@ body{
                             display: inline-block;
                             position: absolute;
                             margin-left: 10px;
+                            a{
+                                color: #000;
+                            }
                             p{
                                 margin-bottom: 0;
                             }
@@ -504,6 +510,34 @@ body{
                     color: red;
                 }
                 .EditBtn{
+                    color: $choosenColor;
+                }
+            }
+        }
+    }
+    footer{
+        border-top: 1px solid #dddddd1a;
+        margin-top: 50px;
+        .logo{
+            a{
+                color: $choosenColor;
+            }
+            img{
+                width: 50px;
+                display: inline-block;
+            }
+            h5{
+                display: inline-block;
+            }
+        }
+        .followMe{
+            display: grid;
+            grid-template-columns: 30px 30px 30px 30px;
+            grid-gap: 20px;
+            justify-content: center;
+            div{
+                font-size: 20px;
+                a{
                     color: $choosenColor;
                 }
             }

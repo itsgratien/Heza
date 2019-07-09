@@ -62,10 +62,10 @@
               </div>
             </div>
             <li>
-            <a class="nav-link" href="/story/create"><i class="icofont-brand-appstore"></i> New Story</a>
+            <a class="nav-link" href="/"><i class="icofont-ui-home"></i> Home</a>
             </li>
             <li>
-                <a class="nav-link" href="#"><i class="icofont-read-book"></i> Stories</a>
+                <a class="nav-link" href="/story/create"><i class="icofont-brand-appstore"></i> New Stories</a>
             </li>
             <li>
                 <a class="nav-link" href="/{!! Auth()->user()->handle !!}"><i class="icofont-user-suited"></i> Profile</a>
@@ -93,7 +93,30 @@
     <div class="error-message"></div>
 </section>
 <footer>
-
+  <div class="text-center mt-5 d-flex flex-column justify-content-center align-item-center w-100">
+        <div class="logo">
+        <a href="/">
+            <img src="https://i.ibb.co/1MfL4sC/android-character-symbol.png" alt="logo">
+            <h5>Heza</h5>
+        </a>
+        </div>
+  <div class="mt-3 followMe">
+    <div>
+        <a href="https://github.com/itsgracian" target="_blank"><i class="icofont-github"></i></a>
+    </div>
+    <div>
+        <a href="https://twitter.com/@Itsgracian" target="_blank"><i class="icofont-twitter"></i></a>
+    </div>
+    <div>
+        <a href="https://www.instagram.com/itsgracian/" target="_blank"><i class="icofont-instagram"></i></a>
+    </div>
+    <div>
+        <a href="https://www.facebook.com/itsgracian" target="_blank">
+            <i class="icofont-facebook"></i>
+        </a>
+    </div>
+  </div>
+  </div>
 </footer>
 @yield('scripts')
 <script src="/js/library.js" type="text/javascript"></script>
