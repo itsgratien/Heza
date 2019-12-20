@@ -2,9 +2,6 @@
 @section('title', 'welcome')
 @section('content')
 <div class="text-center app-title">
- <div class="mb-5">
-     Open Source Blogging Application
- </div>
 </div>
 <div class="top-category-story">
     <div class="container">
