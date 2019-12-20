@@ -1,6 +1,9 @@
 # Heza
 Blogging web application written in PHP/Laravel
 
+## Screenshot
+![Screen Shot 2019-12-21 at 00 59 01](https://user-images.githubusercontent.com/27460888/71297669-1c470a00-238d-11ea-8e86-260196d0ff48.png)
+
 ## Usage
 ### Clone
 ```
@@ -31,8 +34,6 @@ php artisan migrate
 ```
 php artisan serve
 ```
-## App Screenshot
-<img width="1440" alt="Screen Shot 2019-07-09 at 17 05 08" src="https://user-images.githubusercontent.com/27460888/60900062-de857780-a26b-11e9-9299-5f3b45e49d49.png">
 
 ## License
 MIT
